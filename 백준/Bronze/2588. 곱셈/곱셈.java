@@ -1,39 +1,25 @@
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-       Scanner sc = new Scanner(System.in);
+        int A = Integer.parseInt(sc.nextLine());
+        int B = Integer.parseInt(sc.nextLine());
 
-       String A = sc.nextLine();
-       String B = sc.nextLine();
+        // 뒤집어 담기 위해 int를 String 형태로 바꾸어야 함.
+        StringBuffer sb = new StringBuffer(String.valueOf(B)).reverse();
 
-       // A를 정수형으로 변환
-       int intA = Integer.parseInt(A);
+        // 쪼개진 숫자들
+        String[] splited = sb.toString().split("");
 
-       // B의 뒷자리 숫자부터 곱해야 하므로 뒤집은 후
-       StringBuffer sb = new StringBuffer(B);
-       String reversedB = sb.reverse().toString();
+        // 각 자리수를 다시 정수로 변환
+        for(int i = 0; i < splited.length; i++) {
+            System.out.println( A * Integer.parseInt(splited[i]) );
+        }
 
-       // 뒤집은 B를 자릿수로 쪼갠다.
-       String[] eachNums = reversedB.split("");
-
-//       역순으로 잘 쪼개졌는지 확인
-//       System.out.println(Arrays.toString(eachNums));
-
-       // B는 여전히 문자이니 숫자로 바꾸어 곱한다.
-       for(String digit : eachNums) {
-           int intB = Integer.parseInt(digit);
-           System.out.println(intA * intB);
-       }
-
-       // 곱셈값
-        System.out.println(intA * Integer.parseInt(B));
-
-       sc.close();
+        System.out.println(A*B);
 
     }
 }
