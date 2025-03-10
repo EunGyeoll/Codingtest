@@ -28,17 +28,20 @@ public class Main {
 
         int[][] sum = new int[N][M];
 
+
+        // sum 행렬 만들기
         for(int i=0; i<N; i++) {
             for(int j=0; j<M; j++) {
                 sum[i][j] = A[i][j] + B[i][j];
             }
         }
 
-
+        // sum 행렬 출력
         for(int i=0; i<N; i++) {
             for(int j=0; j<M; j++) {
-                System.out.println(sum[i][j]);
+                System.out.print(sum[i][j] + " ");
             }
+            System.out.println();
         }
 
         sc.close();
