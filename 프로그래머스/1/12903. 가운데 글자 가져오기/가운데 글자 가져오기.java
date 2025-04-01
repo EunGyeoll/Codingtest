@@ -1,12 +1,16 @@
-class Solution {
+class Solution { 
     public String solution(String s) {
-        int len = s.length();
-        if (len % 2 == 0) {
-            // 짝수일 때: 가운데 두 글자
-            return s.substring(len / 2 - 1, len / 2 + 1);
-        } else {
-            // 홀수일 때: 가운데 한 글자
-            return s.substring(len / 2, len / 2 + 1);
+        String answer = "";
+        
+        // 길이가 홀수일 때
+        if(s.length() % 2 != 0) {
+            answer = String.valueOf(s.charAt(s.length() / 2)); 
         }
+        // 길이가 짝수일 때
+        else {
+            answer = s.charAt(s.length() / 2 - 1) + "" + s.charAt(s.length() / 2);  
+        }
+        
+        return answer;
     }
 }
