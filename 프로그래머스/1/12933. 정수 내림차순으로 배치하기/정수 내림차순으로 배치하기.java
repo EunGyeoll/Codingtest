@@ -2,15 +2,30 @@ import java.util.Arrays;
 
 class Solution {
     public long solution(long n) {
+        // 숫자열 n을 문자로 전환
+        String s = String.valueOf(n);
+        // 문자를 문자열로 전환
+        char[] charA = s.toCharArray();
         
-        char[] charN = String.valueOf(n).toCharArray();
-        Arrays.sort(charN); // 일단 오름차순으로 정렬하기
-        StringBuilder sb = new StringBuilder(new String(charN));
-                
-        return Long.parseLong(sb.reverse().toString());
+        // 배열 단계에서 정렬해야 함.
+        // char[] 단계에서는 정렬 가능하고, StringBuilder 단계에서는 뒤집기 가능.
+        Arrays.sort(charA);
         
-        // char[] 사용 이유: toCharArray(), Arrays.sort() 를 사용 가능
-        // String[] 타입 사용하면 split("")으로 String[] 변환, String.join("", arr) 로 다시 문자열을 합쳐야 함.
+        String st = new String(charA);
+        
+        // 가변 객체인 StringBuilder 로 바꿈
+        StringBuilder sb = new StringBuilder(st);
 
+        // StringBuilder에서 reverse 가능
+        sb.reverse();
+        
+        // 문자열을 담은 객체인 StringBuilder sb를 문자열로 변환
+        String stt = sb.toString();
+        
+        // String을 long으로
+        long answer = Long.parseLong(stt);
+        
+        
+        return answer;
     }
 }
