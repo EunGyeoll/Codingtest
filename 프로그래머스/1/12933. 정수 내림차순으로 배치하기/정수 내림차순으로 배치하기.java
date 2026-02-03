@@ -11,6 +11,7 @@ class Solution {
         // char[] 단계에서는 정렬 가능하고, StringBuilder 단계에서는 뒤집기 가능.
         Arrays.sort(charA);
         
+        // String st = String.valueOf(charA);도 가능
         String st = new String(charA);
         
         // 가변 객체인 StringBuilder 로 바꿈
