@@ -1,11 +1,11 @@
 class Solution {
     public int solution(int[] numbers) {
+        int sumOfZeroToNine = 45;
+        
         int sum = 0;
         
-        for(int i=0; i<numbers.length; i++) {
-            if(numbers[i]<=9) {
-                sum+=numbers[i];
-            }
+        for (int i: numbers) {
+            sum += i; 
         }
         
 
